@@ -7,7 +7,6 @@ class ComputerBuilder{
 	public:
 		virtual ~ComputerBuilder(){}
 
-		virtual void reset() = 0;
 		virtual ComputerBuilder* setType() = 0;
 		virtual ComputerBuilder* setRAMSize() = 0;
 		virtual ComputerBuilder* setCPUCores() = 0;

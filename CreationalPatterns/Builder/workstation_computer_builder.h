@@ -5,7 +5,7 @@ class WorkstationComputerBuilder : public ComputerBuilder{
 	private:
 		Computer* computer;
 	public:
-		WorkstationComputerBuilder(){computer = new Computer();}
+		WorkstationComputerBuilder();
 
 		ComputerBuilder* setType() override;
 		ComputerBuilder* setRAMSize() override;
@@ -13,7 +13,6 @@ class WorkstationComputerBuilder : public ComputerBuilder{
 		ComputerBuilder* setGPUMemorySize() override;
 		ComputerBuilder* setMonitorSize() override;
 
-		void reset();
 		Computer* getComputer() override;
 };
 

@@ -3,7 +3,7 @@
 #include "computer_builder.h"
 #include "gaming_computer_builder.h"
 
-void GamingComputerBuilder::reset(){
+GamingComputerBuilder::GamingComputerBuilder(){
 	computer = new Computer();
 }
 
@@ -34,6 +34,6 @@ ComputerBuilder* GamingComputerBuilder::setMonitorSize(){
 
 Computer* GamingComputerBuilder::getComputer(){
 	Computer* newComputer = std::move(computer);
-	this->reset();
+	computer = new Computer();
 	return newComputer;
 }

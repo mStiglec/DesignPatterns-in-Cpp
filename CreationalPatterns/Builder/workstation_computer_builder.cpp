@@ -3,7 +3,7 @@
 #include "computer_builder.h"
 #include "workstation_computer_builder.h"
 
-void WorkstationComputerBuilder::reset(){
+WorkstationComputerBuilder::WorkstationComputerBuilder(){
 	computer = new Computer();
 }
 
@@ -34,6 +34,6 @@ ComputerBuilder* WorkstationComputerBuilder::setMonitorSize(){
 
 Computer* WorkstationComputerBuilder::getComputer(){
 	Computer* newComputer = std::move(computer);
-	this->reset();
+	computer = new Computer();
 	return newComputer;
 }

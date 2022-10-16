@@ -8,7 +8,7 @@ class GamingComputerBuilder : public ComputerBuilder{
 	private:
 		Computer* computer;
 	public:
-		GamingComputerBuilder(){computer = new Computer();}
+		GamingComputerBuilder();
 
 		ComputerBuilder* setType() override;
 		ComputerBuilder* setRAMSize() override;
@@ -16,7 +16,6 @@ class GamingComputerBuilder : public ComputerBuilder{
 		ComputerBuilder* setGPUMemorySize() override;
 		ComputerBuilder* setMonitorSize() override;
 
-		void reset();
 		Computer* getComputer() override;
 };
 
