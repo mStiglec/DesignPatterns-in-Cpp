@@ -33,4 +33,11 @@ int main(int argc, char** argv){
 
 	Computer* computerWithoutMonitor = director->makeComputerWithoutMonitor();
 	printComputer(computerWithoutMonitor);
+
+	delete gamingComputerBuilder;
+	delete workstationComputerBuilder;
+	delete director;
+	delete gamingComputer;
+	delete workstationComputer;
+	delete computerWithoutMonitor;
 }

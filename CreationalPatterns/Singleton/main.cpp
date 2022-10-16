@@ -12,4 +12,7 @@ int main(int argc,char **argv){
 	random2->changeRandomNumber();
 	std::cout<<random->getRandomNumber()<<std::endl;
 	std::cout<<random2->getRandomNumber()<<std::endl;
+
+	delete random;
+	delete random2;
 }
