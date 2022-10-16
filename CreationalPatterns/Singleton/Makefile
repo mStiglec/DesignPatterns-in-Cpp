@@ -11,4 +11,4 @@ random.o: random.cpp
 	$(CXX) $(CXXFLAGS) -c random.cpp
 
 clean:
-	-rm -f core *.o
+	-rm -f core *.o *.exe

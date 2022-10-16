@@ -1,0 +1,32 @@
+Builder pattern
+
+----DESCRIPTION----
+Builder pattern solves creation problem of big/complex objects.
+With using builder pattern complex object can be build step by step and we can build it
+in various combinations/variations.
+
+----PROBLEM(S)----
+1) Imagine we have object that inside has a lot of attributes and some of them are other nested
+   objects(that also inside can have nested objects). Constructors for this type of objects can be big,
+   unreadable and hardly maintainable (it is adviced to have less than 5 parameters inside constructor/function).
+
+2) Different parts of object need to be build in different ways based on other parts.
+   e.g. --> Car clutch can be automatic and regular, in our example we say that if car is electric it needs automatic clutch
+   			and if it is not it needs regular clutch. How can we build those two cars?
+
+----SOLUTION----
+Main thought for builder pattern is to move creation of objects in separate class and build objects with
+specific object called builder.
+You can build object step by step and it is important to notice that it is not necessary to build all steps.
+You can call only steps that are relevant for that objects.
+e.g.--> if you are building a car, you can build a car with additional equipment if buyer request it, 
+and if buyer dont want additional equipment you do not need to include equipment (you dont need null/false parameter
+in constructor to know should you build additional equimplemt or not).
+
+----WHEN TO USE BUILDER PATTERN----
+Big and complex objects construction.
+Big amount of object possible expansions.
+Object parts need to be build in different ways depending on other parts.
+
+----REFERENCE----
+https://refactoring.guru/design-patterns/builder
