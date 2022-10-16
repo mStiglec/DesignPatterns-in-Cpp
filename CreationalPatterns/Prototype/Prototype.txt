@@ -1,0 +1,23 @@
+Prototype pattern
+
+----DESCRIPTION----
+Prototype pattern enable object duplication removing dependency on object class.
+
+----PROBLEM(S)----
+To copy some object you need to have access to his class attributes because all attributes from old
+object need to be copied to new one. Problem comes when we dont have access to class attributes (they are private).
+On the other side, if we have access on object class attributes there is still dependency to that class.
+
+----SOLUTION----
+Cloning process is moved to objects that are cloned.
+Common interface for all objects that need to support cloning (usually only clone() method). This interface
+will enable cloning objects without dependency on class of that object.
+Object that supports cloning is called prototype.
+
+----WHEN TO USE PROTOTYPE PATTERN----
+When your could should not depend on class of objects that need to be copied.
+Objects that need to be cloned are very big and complex.
+No need for initialization every time object is cloned.
+
+----REFERENCE----
+https://refactoring.guru/design-patterns/prototype
