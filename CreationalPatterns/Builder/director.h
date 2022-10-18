@@ -6,13 +6,12 @@
 
 class Director{
 	private:
-		ComputerBuilder* computerBuilder;
+		std::shared_ptr<ComputerBuilder> computerBuilder;
 	public:
 		Director() = delete;
-		Director(ComputerBuilder* _computerBuilder);
-		void changeBuilder(ComputerBuilder* computerBuilder);
-		Computer* makeComputer();
-		Computer* makeComputerWithoutMonitor();
+		Director(std::shared_ptr<ComputerBuilder> _computerBuilder);
+		void changeBuilder(std::shared_ptr<ComputerBuilder> computerBuilder);
+		std::shared_ptr<Computer> makeComputer(bool hasMonitor);
 };
 
 

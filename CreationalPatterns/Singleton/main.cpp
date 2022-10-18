@@ -14,5 +14,6 @@ int main(int argc,char **argv){
 	std::cout<<random2->getRandomNumber()<<std::endl;
 
 	delete random;
-	delete random2;
+	//delete random2; --> will cause double allocation because
+	//random and random2 are pointing to same memory
 }

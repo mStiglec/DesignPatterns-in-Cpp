@@ -1,28 +1,29 @@
 #include <iostream>
 #include <vector>
+
 #include "game_asset.h"
 #include "water_asset.h"
 #include "ground_asset.h"
 #include "grass_asset.h"
 
 int main(int argc, char** argv){
-	std::vector<GameAsset*> forest;
-	std::vector<GameAsset*> grandCanyon;
-	std::vector<GameAsset*> estuary;
+	std::vector<std::shared_ptr<GameAsset>> forest;
+	std::vector<std::shared_ptr<GameAsset>> grandCanyon;
+	std::vector<std::shared_ptr<GameAsset>> estuary;
 
 	// Create some game assets
-	WaterAsset* oceanWater = new WaterAsset("ocean",12.0,"blue");
-	WaterAsset* riverWater = new WaterAsset("river",14.0,"river blue");
+	std::shared_ptr<WaterAsset> oceanWater = std::make_shared<WaterAsset>("ocean",12.0,"blue");
+	std::shared_ptr<WaterAsset> riverWater = std::make_shared<WaterAsset>("river",14.0,"river blue");	
 
-	GroundAsset* sandAsset = new GroundAsset("sand",10.0,"brown");
-	GroundAsset* rockAsset = new GroundAsset("rock",6.0,"grey");
-
-	GrassAsset* meadowGrass = new GrassAsset("meadow",14.0,"meadow green");
+	std::shared_ptr<GroundAsset> sandAsset = std::make_shared<GroundAsset>("sand",10.0,"brown");	
+	std::shared_ptr<GroundAsset> rockAsset = std::make_shared<GroundAsset>("rock",6.0,"grey");	
+ 
+	std::shared_ptr<GrassAsset> meadowGrass = std::make_shared<GrassAsset>("meadow",14.0,"meadow green");
 
 	//Create forest (contains water and grass assets)
 	for(unsigned int i=0;i<3;i++){
 		forest.push_back(riverWater->clone());
-		//forest.push_back(meadowGrass->clone());
+		forest.push_back(meadowGrass->clone());
 	}
 
 	//Create grandCanyon (contains only ground assets)
@@ -44,37 +45,46 @@ int main(int argc, char** argv){
 	}
 
 	std::cout<<"FOREST TILES:"<<std::endl;
-	for(GameAsset* asset : forest){
+	for(std::shared_ptr<GameAsset> asset : forest){
 		asset->printAsset();
 	}
 
 	/*std::cout<<"GRAND CANYON TILES:"<<std::endl;
-	for(GameAsset* asset : grandCanyon){
+	for(std::shared_ptr<GameAsset> asset : grandCanyon){
+		asset->printAsset();
+	}
+
+	std::cout<<"ESTUARY TILES:"<<std::endl;
+	for(std::shared_ptr<GameAsset> asset : estuary){
 		asset->printAsset();
 	}*/
 
-	/*std::cout<<"ESTUARY TILES:"<<std::endl;
-	for(GameAsset* asset : estuary){
-		asset->printAsset();
-	}*/
-
-	//If we need another forest in our game we just need to
-	std::vector<GameAsset*> anotherForest;
-	for(GameAsset* asset : forest){
+	//If we need another forest in our game we can do following
+	std::vector<std::shared_ptr<GameAsset>> anotherForest;
+	for(std::shared_ptr<GameAsset> asset : forest){
 		anotherForest.push_back(asset->clone());
 	}
 
 	std::cout<<"ANOTHER FOREST TILES:"<<std::endl;
-	for(GameAsset* asset : anotherForest){
+	for(std::shared_ptr<GameAsset> asset : anotherForest){
 		asset->printAsset();
 	}
 
-	delete oceanWater;	
-	delete riverWater;
-	delete sandAsset;
-	delete rockAsset;
-	delete meadowGrass;
+	//Check if original and prototype forests are same
+	bool areForestsEqual = true;
+	for(unsigned int i=0;i<forest.size();i++){
+		if(*forest[i] != *anotherForest[i]){
+			areForestsEqual = false;
+			break;
+		}
+	}
 
+	if(areForestsEqual){
+		std::cout << "Forests are equal" << std::endl;
+	}else{
+		std::cout << "error: prototype not equal to original" << std::endl;
+		return 1;
+	}
 }
 
 

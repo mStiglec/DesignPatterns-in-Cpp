@@ -1,10 +1,11 @@
 #include <iostream>
+
 #include "computer.h"
 #include "gaming_computer_builder.h"
 #include "workstation_computer_builder.h"
 #include "director.h"
 
-void printComputer(Computer* computer){
+void printComputer(std::shared_ptr<Computer> computer){
 	std::cout<<computer->getType()<<" computer:"<<std::endl;
 	std::cout<<"RAM - "<<computer->getRAMSize()<<" GB"<<std::endl;
 	std::cout<<"CPU cores - "<<computer->getCPUCores()<<std::endl;
@@ -18,26 +19,23 @@ void printComputer(Computer* computer){
 }
 
 int main(int argc, char** argv){
-	GamingComputerBuilder* gamingComputerBuilder = new GamingComputerBuilder();
-	WorkstationComputerBuilder* workstationComputerBuilder = new WorkstationComputerBuilder();
+	std::shared_ptr<GamingComputerBuilder> gamingComputerBuilder = std::make_shared<GamingComputerBuilder>();
+	std::shared_ptr<WorkstationComputerBuilder> workstationComputerBuilder = std::make_shared<WorkstationComputerBuilder>();
 
-	Director* director = new Director(gamingComputerBuilder);
+	std::shared_ptr<Director> director = std::make_shared<Director>(gamingComputerBuilder);
+	
+	char hasMonitor;
+	std::cout<<"Include monitor in gaming build: [y/n]"<<std::endl;
+	std::cin>>hasMonitor;
 
-	Computer* gamingComputer = director->makeComputer();
+	std::shared_ptr<Computer> gamingComputer = director->makeComputer(hasMonitor=='y' ? true:false);
 	printComputer(gamingComputer);
+
+	std::cout<<"Include monitor in workstation build: [y/n]"<<std::endl;
+	std::cin>>hasMonitor;
 
 	director->changeBuilder(workstationComputerBuilder);
 
-	Computer* workstationComputer = director->makeComputer();
+	std::shared_ptr<Computer> workstationComputer = director->makeComputer(hasMonitor=='y' ? true:false);
 	printComputer(workstationComputer);
-
-	Computer* computerWithoutMonitor = director->makeComputerWithoutMonitor();
-	printComputer(computerWithoutMonitor);
-
-	delete gamingComputerBuilder;
-	delete workstationComputerBuilder;
-	delete director;
-	delete gamingComputer;
-	delete workstationComputer;
-	delete computerWithoutMonitor;
 }

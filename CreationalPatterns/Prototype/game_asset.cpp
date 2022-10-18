@@ -1,9 +1,5 @@
-#include <string>
 #include "game_asset.h"
 
-GameAsset::GameAsset(GameAsset* gameAsset):
-	type(gameAsset->color),
-	surface(gameAsset->surface),
-	color(gameAsset->color){};
-
+GameAsset::GameAsset(std::string _type, double _surface, std::string _color)
+	:type(_type),surface(_surface),color(_color){}
 

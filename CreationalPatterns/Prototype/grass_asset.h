@@ -2,20 +2,23 @@
 #define GRASS_ASSET_H
 
 #include <string>
+#include <memory>
+
 #include "game_asset.h" 
 
-class GrassAsset : public GameAsset{
-	private:
-		std::string type;
-		double surface;
-		std::string color;
+class GrassAsset : public GameAsset,
+				   public std::enable_shared_from_this<GrassAsset>
+{
 	public:
 		GrassAsset(std::string type, double surface, std::string color);
-		GrassAsset(GrassAsset* grassAsset);
+		GrassAsset(std::shared_ptr<GrassAsset> grassAsset);
 		~GrassAsset() = default;
 
-		GameAsset* clone() override;
+		std::shared_ptr<GameAsset> clone() override;
 		void printAsset() override;
+
+		bool operator==(const GameAsset& rhs) const override;
+		bool operator!=(const GameAsset& rhs) const override;
 };
 
 #endif

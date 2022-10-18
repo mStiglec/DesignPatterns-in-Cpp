@@ -1,39 +1,40 @@
 #include <utility>
+#include <memory>
 
 #include "computer_builder.h"
 #include "gaming_computer_builder.h"
 
 GamingComputerBuilder::GamingComputerBuilder(){
-	computer = new Computer();
+	computer = std::make_shared<Computer>();
 }
 
-ComputerBuilder* GamingComputerBuilder::setType(){
+std::shared_ptr<ComputerBuilder> GamingComputerBuilder::setType(){
 	computer->setType("Gaming");
-	return this;
+	return shared_from_this();
 }
 
-ComputerBuilder* GamingComputerBuilder::setRAMSize(){
+std::shared_ptr<ComputerBuilder> GamingComputerBuilder::setRAMSize(){
 	computer->setRAMSize(16);
-	return this;
+	return shared_from_this();
 }
 
-ComputerBuilder* GamingComputerBuilder::setCPUCores(){
+std::shared_ptr<ComputerBuilder> GamingComputerBuilder::setCPUCores(){
 	computer->setCPUCores(8);
-	return this;
+	return shared_from_this();
 }
 
-ComputerBuilder* GamingComputerBuilder::setGPUMemorySize(){
+std::shared_ptr<ComputerBuilder> GamingComputerBuilder::setGPUMemorySize(){
 	computer->setGPUMemorySize(12);
-	return this;
+	return shared_from_this();
 }
 
-ComputerBuilder* GamingComputerBuilder::setMonitorSize(){
+std::shared_ptr<ComputerBuilder> GamingComputerBuilder::setMonitorSize(){
 	computer->setMonitorSize(17.2);
-	return this;
+	return shared_from_this();
 }
 
-Computer* GamingComputerBuilder::getComputer(){
-	Computer* newComputer = std::move(computer);
-	computer = new Computer();
+std::shared_ptr<Computer> GamingComputerBuilder::getComputer(){
+	std::shared_ptr<Computer> newComputer = std::move(computer);
+	computer = std::make_shared<Computer>();
 	return newComputer;
 }

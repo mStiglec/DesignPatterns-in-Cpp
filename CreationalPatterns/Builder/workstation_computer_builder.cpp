@@ -1,39 +1,40 @@
 #include <utility>
+#include <memory>
 
 #include "computer_builder.h"
 #include "workstation_computer_builder.h"
 
 WorkstationComputerBuilder::WorkstationComputerBuilder(){
-	computer = new Computer();
+	computer = std::make_shared<Computer>();
 }
 
-ComputerBuilder* WorkstationComputerBuilder::setType(){
+std::shared_ptr<ComputerBuilder> WorkstationComputerBuilder::setType(){
 	computer->setType("Workstation");
-	return this;
+	return shared_from_this();
 }
 
-ComputerBuilder* WorkstationComputerBuilder::setRAMSize(){
+std::shared_ptr<ComputerBuilder> WorkstationComputerBuilder::setRAMSize(){
 	computer->setRAMSize(32);
-	return this;
+	return shared_from_this();
 }
 
-ComputerBuilder* WorkstationComputerBuilder::setCPUCores(){
+std::shared_ptr<ComputerBuilder> WorkstationComputerBuilder::setCPUCores(){
 	computer->setCPUCores(64);
-	return this;
+	return shared_from_this();
 }
 
-ComputerBuilder* WorkstationComputerBuilder::setGPUMemorySize(){
+std::shared_ptr<ComputerBuilder> WorkstationComputerBuilder::setGPUMemorySize(){
 	computer->setGPUMemorySize(16);
-	return this;
+	return shared_from_this();
 }
 
-ComputerBuilder* WorkstationComputerBuilder::setMonitorSize(){
+std::shared_ptr<ComputerBuilder> WorkstationComputerBuilder::setMonitorSize(){
 	computer->setMonitorSize(17.2);
-	return this;
+	return shared_from_this();
 }
 
-Computer* WorkstationComputerBuilder::getComputer(){
-	Computer* newComputer = std::move(computer);
-	computer = new Computer();
+std::shared_ptr<Computer> WorkstationComputerBuilder::getComputer(){
+	std::shared_ptr<Computer> newComputer = std::move(computer);
+	computer = std::make_shared<Computer>();
 	return newComputer;
 }
