@@ -1,0 +1,29 @@
+Factory Method pattern
+
+----DESCRIPTION----
+Factory Method is superclass method that enables derived classes to implement object
+creation for a specific way.
+
+----PROBLEM(S)----
+1)If your application need to add another classes (expansion) inside codebase, then if your code
+  is highly coupled to classes it uses it will be very hard to add another class without changing
+  big amount of code (what if it is needed to add 5 classes?). 
+
+----SOLUTION----
+Base class has factory method. Factory method will be inherited inside derived classes and client
+will use this method to create objects instead of using new operator. New operator will still be used
+but inside factory method.
+There is one need to be satisfied. All products that factory emthod can return must have same interface.
+Factory method will return objects of that interface.
+With this approach user is calling factory method to construct objects. He does not know how objects are created
+(user is not using new operator directly). User only knows what his product need to do (functionality defined
+by interface all products inherit). Also, user does not know how product functinality is implemented, he is just
+using the product.
+
+----WHEN TO USE FACTORY METHOD PATTERN----
+When there is no knowledge about future products that application should support.
+If there is need to reuse existing objects. Constructor always returns new objects so factory emthod can have
+logic to decide wheter new object is needed or old one can be reused.
+
+----REFERENCE----
+https://refactoring.guru/design-patterns/factory-method
