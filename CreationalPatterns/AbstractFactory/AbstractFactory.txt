@@ -1,0 +1,40 @@
+Abstract Factory pattern
+
+----DESCRIPTION----
+We can say Abstract factory is upgrade from Factory method pattern.
+What Abstract Factory is providing - creation of familiar/related objects without need
+for knowing their classes. 
+
+----PROBLEM(S)---- 
+You need to build objects that are related one to another.
+All related objects can be separated in groups based on their characteristics.
+Objects that have one characteristic can not be compatible with objects that have
+different characteristic.
+
+As example I will take house building.
+Every house (to be a house) needs windows, door(s) and roof. --> objects
+We can define 3 tpyes of houses: normal house(brick), treehouse(wood) and snow house(igloo)
+We can not build the treehouse with wooden windows and snow doors (it is not compatible).
+So we need to ensure that we build all objects that belong to same group (characteristic).
+This is resolved by abstract factory pattern.
+
+----SOLUTION----
+1) Create interface for every object (door, window and roof will have own interface). Those
+   interfaces will define some behaviour for every object eg. all doors will have open() and close()
+   functionality.
+
+2) Create AbstractFactory interface that will have methods for building every product from family.
+
+3) Create concrete Factories based on product characteristics. In this example we will have IglooFactory,
+   NormalHouseFactory and TreehouseFactory. Analogicaly treeehouse will create Wooden door,
+   windows and roof.
+
+4) App can use one of the abstract factories based on user input (or app config).
+
+
+----WHEN TO USE ABSTRACT FACTORY PATTERN----
+When there are related products(families) that need to be ructed in different ways.
+Products of different types are not compatible with each other.
+
+----REFERENCE----
+https://refactoring.guru/pattern/abstract-factory
