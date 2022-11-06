@@ -1,0 +1,24 @@
+Adapter pattern
+
+----DESCRIPTION----
+Objects with incompatible interfaces can collaborate.
+Adapter helps in changing one objects interface to be compatible with other object interface.
+Adapter works with interface of one object so it can call methods of that object, inside adapter
+is logic of converting data in format that another object understands.
+
+----PROBLEM(S)----
+You want to use 3th party library or existing class that has interface incompatible with your data.
+Subclasses lacks common functionality that can not be extracted inside base class.
+
+----SOLUTION----
+Create Adapter class that will have first object as a attribute (it can use first object functionality).
+This adapter class will inherit other object interface so it will implement functionality of a second object.
+Now adapter "is-a" second object and it "has-a" functionality of first object.
+In the end it is possible to call wanted method with adapter class without incompatibility problems between
+two objects (inside ).
+
+----WHEN TO USE ADAPTER PATTERN----
+When we have problems mentioned in PROBLEM section.
+
+----REFERENCE----
+https://refactoring.guru/design-patterns/adapter
