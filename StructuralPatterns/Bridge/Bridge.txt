@@ -1,0 +1,37 @@
+Bridge pattern
+
+----DESCRIPTION----
+Bridge pattern splits classes into two hierarchies. Hierarchies can be developed
+independently. Those hierarchies are closely related to each other. Having everything
+inside one class can be unmaintainable and unreadable. Hierarchies are formaly called
+abstraction and implementation.
+
+----PROBLEM(S)----
+Adding another hierarchy inside existing class. That can cause too many classes because
+it is needed to make subclass for every class from abstraction hierarchy and for every
+class from implementation hierarchy. That means number of classes grows exponentially
+for each new type in one of the hierarchy.
+
+E.g. --> We have board game. We can have N board games.
+		 Every board game can have extension.
+		 Board game need to know for how many players the game is played because rules are
+		 different based on extension.
+		 First possible approach would be to create N*N classes with all possible combinations
+		 of board games and extensions (We would have very big amount of classes).
+		 Second approch can be to put extension class object inside board game class. In that
+		 way we can check which extension is used make rules based on that
+		 information (second approach --> Bridge pattern).
+
+----SOLUTION----
+Instead of inheritance composition is used. First class has object of another hierarchy type.
+Both hierarhies implements one interface. First class can set object of another hierarchy type
+and use that functionality (that object can be set dynamically).
+
+----WHEN TO USE BRIDGE PATTERN----
+Use the Bridge pattern when you want to divide and organize a monolithic class that has several
+variants of some functionality.
+Use the pattern when you need to extend a class in several orthogonal (independent) dimensions.
+Use the Bridge if you need to be able to switch implementations at runtime.
+
+----REFERENCE----
+https://refactoring.guru/design-patterns/bridge
