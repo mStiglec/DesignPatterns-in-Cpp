@@ -1,0 +1,33 @@
+Proxy pattern
+
+----DESCRIPTION----
+Proxy lets you more control of original object class. With proxy you can perform
+actions before or after using original object. We can interpret this as substitute for
+original object.
+
+----PROBLEM(S)----
+You want to do something before or after your object(class) functionality without changing the class.
+
+----SOLUTION----
+Create proxy class where you implement after and before actions for your original class. Proxy inherit
+same class so client does not know that he got proxy class. Proxy class should have original class so
+it can call original methods.
+
+There are 5 most known types of proxies:
+	1) Virtual proxy (lazy initialization)
+	2) Protection proxy (checking user integrity before using some service)
+	3) Remote proxy (proxy handles all network problems before service can be executed on remote location)
+	4) Caching proxy (proxy implements caching service)
+	5) Logging proxy (proxy logs request to service before using service)
+
+----IMPLEMENTED EXAMPLE----
+Proxy object will have multiple jobs:
+	1) Count how many clients are subscribed to service
+	2) Check if there is enough resources on service for user to attach
+	3) Log client activity (logging proxy)
+
+----WHEN TO USE PROXY PATTERN----
+When you have one of the problems stated above.
+
+----REFERENCE----
+https://refactoring.guru/design-patterns/proxy

@@ -9,15 +9,15 @@
 #include "../inc/board_game1.h"
 #include "../inc/board_game2.h"
 
-#define EXTENSION_PLAYER_NUMB 2
+#define EXTENSION_PLAYER_NUM 2
 #define BOARD_GAME_PLAYER_NUM 4
 
 int main(){
 	std::shared_ptr<Extension> forestExtension =
-		std::make_shared<ForestExtension>(EXTENSION_PLAYER_NUMB);
+		std::make_shared<ForestExtension>(EXTENSION_PLAYER_NUM);
 
 	std::shared_ptr<Extension> riverExtension =
-		std::make_shared<RiverExtension>(EXTENSION_PLAYER_NUMB);
+		std::make_shared<RiverExtension>(EXTENSION_PLAYER_NUM);
 
 	std::string BoardGameRules1 = "Rules for Board 1";
 	std::string BoardGameRules2 = "Rules for Board 2";
