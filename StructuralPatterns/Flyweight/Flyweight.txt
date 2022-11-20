@@ -1,0 +1,41 @@
+Flyweight pattern
+
+----DESCRIPTION----
+Flyweight is pattern that can save RAM by keeping same data across same objects rather
+then saving that data in every object individually.
+Object data that is same for every object of a class that is not changeable from outside is
+called INSTRISITC state. Object data that can be dynamically changed from outside and can be
+different for every object is called EXTRINSIC state.
+Flyweight pattern suggest to store only INTRISTIC state inside the object.
+Flyweight object should not expose itself to outside (no setters)
+
+----PROBLEM(S)----
+RAM is filled with a lot of objects that have same parameter values. Because of that you dont have
+enough RAM on your computer to run your application.
+
+----SOLUTION----
+Create Flyweight object that will contain you INTRISTIC state(object parameters that rarely change).
+You can create another class that will store all your flyweight objects.
+YOu can represent EXTRINSIC state as another object. That class will have reference to flyweight
+object (so that way we have both EXTRINSIC and INTRISIC state).
+Extrinsic state can be passed to flyweight methods.
+
+----WHEN TO USE FLYWEIGHT PATTERN----
+Your application (computer) runs out of RAM.
+You have a lot of similar objects that use a lot of memory when there is a lot of them.
+
+----IMPLEMENTED EXAMPLE----
+Minecraft is a game where you can go and build your own world of imagination.
+You can use different types of material to build different buildings (house, temple, ship...).
+We know that every building block in minecraft has same width and height (this will be INTRISTIC state
+of building block object). To the INTRISTIC state we will also add type of the material - i know there
+is a lot of types of materials (62) but the meaning of this game is to build as many blocks as you can so
+if you build 3 million blocks in 2 months of playing 62 types is not that much. To EXTRINSIC state there
+are coordinates where block is inserted inside the game (every block has his own coordinates - x,y,z).
+Also inside the game building block is more complicated, inside INTRISTIC state you can put all data that
+goes along with material type because that data will be tha same for each block of certain type. Analogicaly
+to that we can be sure that block coordinates will be different for every block no matter of application
+complexity.
+
+----REFERENCE----
+https://refactoring.guru/design-patterns/flyweight
