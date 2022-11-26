@@ -1,0 +1,29 @@
+Composite pattern
+
+----DESCRIPTION----
+Compose objects in tree structure and handle those object as they were individual (not connected in any way).
+
+----PROBLEM(S)----
+Imagine you have objects that can be part of each other and can have references to objects of same type.
+As example we can give directory structure inside any operating system (Win,Linux,macOS,Anroid...).
+Lets say that Folder represent one class and file represent other class. We can have folders inside folders
+and we can have files inside those folders (inside folder it is possible to have files and other folders).
+Problem occurs when we want to count all files inside some folder with extension .jpg. If we want to
+do that we need to go through every folder inside root folder and count all .jpg files in every of them.
+Problem occurs when we do not have vision inside Folder and File classes (if we do not know if something is
+folder or file).
+
+----SOLUTION----
+Make all objects that will be put inside tree structure inherit same interface. Methods inside that interface 
+will be implemented differently for every class in tree structure (as example: Folder object will implement those methods
+to go trough all folders inside him and File object will return his extension).
+We introduce LEAF term that will represent tree element that can not have branches under him (he is last on the tree branch).
+(LEAFS will be all File objects in directory structure because they can not have anyithing inside them).
+COMPOSITE term is used for other elements.
+
+----WHEN TO USE COMPOSITE PATTERN----
+Objects can be put into tree structure.
+All objects inside tree structure should be treated same by client. 
+
+----REFERENCE----
+https://refactoring.guru/design-patterns/composite
