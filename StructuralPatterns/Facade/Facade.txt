@@ -1,0 +1,31 @@
+Facade pattern
+
+----DESCRIPTION----
+Facade is pattern that is providing interface to complicated libraries or classes.
+
+----PROBLEM(S)----
+If client needs to use complex system there is possibility he needs to call a lot of complex operations to get wanted functionality.
+
+----SOLUTION----
+Facade is class that absorbe all complex operations and provide simple interface for user to use. So in the end user need to call one function instead of creating N objects and calling X functions to get same functionality.
+(All work with complex system is still done but it is separated from client).
+
+----WHEN TO USE FACADE PATTERN----
+Application works with abstract and complex system/3th party library/classes that
+require a lot of function calls and object initialization to provide wanted functionality.
+When system can be separated into layers where facades are entry and outry points for every
+layer.
+
+----IMPLEMENTED EXAMPLE----
+Send message using social application.
+message->send("message") can be facade for couple of steps that need to be done in 
+background for your messsage to go to the receiver.
+Steps:
+	1)Create Segment with help of TCP protocol inside TRANSPORT LAYER
+	2)Create IP Packet with help of IP protocol inside NETWORK LAYER
+	3)Route mesage with hel of router
+	4)Create Frame with help of MAC protocol inside DATA-LINK LAYER
+	5)Convert Frame to bits and send it through physical media inside PHYSICAL LAYER
+
+----REFERENCE----
+https://refactoring.guru/design-patterns/facade
