@@ -1,0 +1,40 @@
+Decorator pattern
+
+----DESCRIPTION----
+Decorator pattern provide possibility to extended object in runtime.
+
+----PROBLEM(S)----
+Your code needs variants of an class. Inheritance can solve this problem. But problem occurs
+when you want to combine those subclasses together. Of course you can make more
+subclasses but that will lead to huge amount of (sub)classes.
+
+Decorator pattern uses composition and aggregation instead of inheritance. Why:
+	1) Inheritance is not providing altering in runtime
+
+COMPOSITION --> A has B, B can not live without A (A manages Bs lifecycle)
+AGGREGATION --> A has B, B can live without A
+
+Using composition and aggregation class A has B and delegates some job to B
+Using inheritance (A inherit B) A will have everything that B and can live on his own.
+
+With this knowledge we can see that if we use composition/aggregation we can change B class
+objects at runtime. That means that work of A class will change by changing B object.
+
+----SOLUTION----
+Wrap object with the decorator. Decorator and object inherit same interface. Inside that interface should
+be all methods that should be extended by decorator. Decorator can have multiple concrete decorators.
+In the runtime objects can be wrapped in multiple decorators that will extended main functionality and delegate
+job on other decorators or the concrete objects. This dynamical change of concrete object functionality can not
+be implemented through inheritance.
+
+----WHEN TO USE DECORATOR PATTERN----
+Object should do his job differently based on situation (that can be decided dynamically) so inheritance does not
+help (it helps but number of classes grow very fast).
+
+----IMPLEMENTED EXAMPLE----
+Inside every game there can be various types of weapons. Weapons ranging from least to most effective. It is
+understandable that best weapons come on biggest levels. We want to update playr weapons dynamically and weapon
+update will follow level up.
+
+----REFERENCE----
+https://refactoring.guru/design-patterns/decorator
