@@ -1,12 +1,12 @@
 #include <iostream>
 #include <vector>
 
-#include "game_asset.h"
-#include "water_asset.h"
-#include "ground_asset.h"
-#include "grass_asset.h"
+#include "inc/game_asset.h"
+#include "inc/water_asset.h"
+#include "inc/ground_asset.h"
+#include "inc/grass_asset.h"
 
-int main(int argc, char** argv){
+int main(){
 	std::vector<std::shared_ptr<GameAsset>> forest;
 	std::vector<std::shared_ptr<GameAsset>> grandCanyon;
 	std::vector<std::shared_ptr<GameAsset>> estuary;

@@ -1,23 +1,15 @@
-CXXFLAGS = -g -Wall
-CXX = g++
+CXX := g++
+CXXFLAGS := -Wall -Wextra
 
-builder: main.o computer.o gaming_computer_builder.o workstation_computer_builder.o director.o
-	$(CXX) $(CXXFLAGS) -o builder.exe main.o computer.o gaming_computer_builder.o workstation_computer_builder.o director.o
+SUBDIRS := src
 
-main.o: main.cpp
-	$(CXX) $(CXXFLAGS) -c main.cpp
+.PHONY: clean subsystem main
 
-computer.o: computer.cpp
-	$(CXX) $(CXXFLAGS) -c computer.cpp
+main.exe: main.cpp subsystems
+	$(CXX) $(CXXFLAGS) $< $(wildcard $(addsuffix /obj/*.o,$(SUBDIRS))) -o $@
 
-gaming_computer_builder.o: gaming_computer_builder.cpp
-	$(CXX) $(CXXFLAGS) -c gaming_computer_builder.cpp
-
-workstation_computer_builder.o: workstation_computer_builder.cpp
-	$(CXX) $(CXXFLAGS) -c workstation_computer_builder.cpp
-
-director.o: director.cpp
-	$(CXX) $(CXXFLAGS) -c director.cpp
+subsystems:
+	$(MAKE) -C $(SUBDIRS)
 
 clean:
-	-rm -f core *.o *.gch *.exe
+	rm -f *.exe && cd $(SUBDIRS) && make clean

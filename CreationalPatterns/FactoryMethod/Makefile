@@ -1,37 +1,18 @@
-SRC_DIR := src
-UTILS_DIR := utils
-OBJ_DIR := obj
-BIN_DIR := bin
+CXX := g++
+CXXFLAGS := -Wall -Wextra
 
+SUBDIRS := src utils/src
 
-EXE := $(BIN_DIR)/main
+.PHONY: clean subsystem main
 
-SRC := $(wildcard $(SRC_DIR)/*.cpp)
-UTILS_SRC := $(wildcard $(UTILS_DIR)/$(SRC_DIR)/*.cpp)
+main.exe: main.cpp subsystems
+	@echo $(wildcard $(addsuffix /obj/*.o,$(SUBDIRS)))
+	$(CXX) $(CXXFLAGS) $< $(wildcard $(addsuffix /obj/*.o,$(SUBDIRS))) -o $@
 
-OBJ := $(SRC:$(SRC_DIR)/%.cpp=$(OBJ_DIR)/%.o) \
-	   $(UTILS_SRC:$(UTILS_DIR)/$(SRC_DIR)/%.cpp=$(OBJ_DIR)/%.o)
-
-CXXFLAGS = -c -Wall -Wextra
-CXX = g++
-
-.PHONY: all
-
-all: $(EXE)
-
-$(EXE): $(OBJ) | $(BIN_DIR)
-	$(CXX) $^ -o $@
-
-$(OBJ_DIR)/%.o: $(SRC_DIR)/%.cpp | $(OBJ_DIR)
-	$(CXX) $(CXXFLAGS) $< -o $@
-
-$(OBJ_DIR)/%.o: $(UTILS_DIR)/$(SRC_DIR)/%.cpp | $(OBJ_DIR)
-	$(CXX) $(CXXFLAGS) $< -o $@
-
-$(BIN_DIR) $(OBJ_DIR):
-	@mkdir -p $@
+subsystems:
+	for dir in $(SUBDIRS); \
+		do $(MAKE) -C $$dir; \
+	done
 
 clean:
-	@$(RM) -rv $(BIN_DIR) $(OBJ_DIR)
-
--include $(OBJ:.o=.d)
+	rm -f *.exe && cd $(SUBDIRS) && make clean

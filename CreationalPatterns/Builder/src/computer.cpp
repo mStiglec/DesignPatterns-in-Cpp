@@ -1,4 +1,4 @@
-#include "computer.h"
+#include "../inc/computer.h"
 
 void Computer::setType(const std::string _type){
 	type = _type;

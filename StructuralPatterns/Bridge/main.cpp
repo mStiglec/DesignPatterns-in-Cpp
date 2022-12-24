@@ -2,12 +2,12 @@
 #include <memory>
 #include <string>
 
-#include "../inc/extension.h"
-#include "../inc/forest_extension.h"
-#include "../inc/river_extension.h"
-#include "../inc/board_game.h"
-#include "../inc/board_game1.h"
-#include "../inc/board_game2.h"
+#include "inc/extension.h"
+#include "inc/forest_extension.h"
+#include "inc/river_extension.h"
+#include "inc/board_game.h"
+#include "inc/board_game1.h"
+#include "inc/board_game2.h"
 
 #define EXTENSION_PLAYER_NUM 2
 #define BOARD_GAME_PLAYER_NUM 4

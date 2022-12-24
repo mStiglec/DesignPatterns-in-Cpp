@@ -1,6 +1,6 @@
 #include <iostream>
 
-#include "ground_asset.h"
+#include "../inc/ground_asset.h"
 
 GroundAsset::GroundAsset(std::string _type, double _surface, std::string _color)
 	:GameAsset(_type,_surface,_color){}

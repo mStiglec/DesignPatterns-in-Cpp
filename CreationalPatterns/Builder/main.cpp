@@ -1,9 +1,9 @@
 #include <iostream>
 
-#include "computer.h"
-#include "gaming_computer_builder.h"
-#include "workstation_computer_builder.h"
-#include "director.h"
+#include "inc/computer.h"
+#include "inc/gaming_computer_builder.h"
+#include "inc/workstation_computer_builder.h"
+#include "inc/director.h"
 
 void printComputer(std::shared_ptr<Computer> computer){
 	std::cout<<computer->getType()<<" computer:"<<std::endl;
@@ -18,7 +18,7 @@ void printComputer(std::shared_ptr<Computer> computer){
 	std::cout<<std::endl;
 }
 
-int main(int argc, char** argv){
+int main(){
 	std::shared_ptr<GamingComputerBuilder> gamingComputerBuilder = std::make_shared<GamingComputerBuilder>();
 	std::shared_ptr<WorkstationComputerBuilder> workstationComputerBuilder = std::make_shared<WorkstationComputerBuilder>();
 

@@ -1,8 +1,8 @@
 #include <utility>
 #include <memory>
 
-#include "computer_builder.h"
-#include "workstation_computer_builder.h"
+#include "../inc/computer_builder.h"
+#include "../inc/workstation_computer_builder.h"
 
 WorkstationComputerBuilder::WorkstationComputerBuilder(){
 	computer = std::make_shared<Computer>();

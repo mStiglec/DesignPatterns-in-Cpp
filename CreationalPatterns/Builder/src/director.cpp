@@ -1,9 +1,9 @@
 #include <iostream>
 #include <memory>
 
-#include "director.h"
-#include "computer.h"
-#include "computer_builder.h"
+#include "../inc/director.h"
+#include "../inc/computer.h"
+#include "../inc/computer_builder.h"
 
 Director::Director(std::shared_ptr<ComputerBuilder> _computerBuilder):computerBuilder(_computerBuilder){}
 

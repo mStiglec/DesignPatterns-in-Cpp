@@ -1,10 +1,10 @@
 #include <iostream>
 #include <memory>
 
-#include "../inc/restaurant.h"
-#include "../inc/chicken_restaurant.h"
-#include "../inc/pizza_restaurant.h"
-#include "../inc/hamburger_restaurant.h"
+#include "inc/restaurant.h"
+#include "inc/chicken_restaurant.h"
+#include "inc/pizza_restaurant.h"
+#include "inc/hamburger_restaurant.h"
 
 int main(){
 	std::shared_ptr<Restaurant> restaurant;

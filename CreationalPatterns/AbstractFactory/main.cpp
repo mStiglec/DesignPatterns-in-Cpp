@@ -1,12 +1,12 @@
 #include <iostream>
 #include <memory>
 
-#include "../inc/door/door.h"
-#include "../inc/door/normal_door.h"
-#include "../inc/factory/house_factory.h"
-#include "../inc/factory/normal_house_factory.h"
-#include "../inc/factory/treehouse_factory.h"
-#include "../inc/factory/igloo_factory.h"
+#include "inc/door/door.h"
+#include "inc/door/normal_door.h"
+#include "inc/factory/house_factory.h"
+#include "inc/factory/normal_house_factory.h"
+#include "inc/factory/treehouse_factory.h"
+#include "inc/factory/igloo_factory.h"
 
 
 int main(){

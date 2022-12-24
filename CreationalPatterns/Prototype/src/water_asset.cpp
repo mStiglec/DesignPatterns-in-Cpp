@@ -1,6 +1,6 @@
 #include <iostream>
 
-#include "water_asset.h"
+#include "../inc/water_asset.h"
 
 WaterAsset::WaterAsset(std::string _type, double _surface, std::string _color)
 	:GameAsset(_type,_surface,_color){}

@@ -1,6 +1,6 @@
 #include <iostream>
 
-#include "grass_asset.h"
+#include "../inc/grass_asset.h"
 
 GrassAsset::GrassAsset(std::string _type, double _surface, std::string _color)
 	:GameAsset(_type,_surface,_color){}

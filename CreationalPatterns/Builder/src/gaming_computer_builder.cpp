@@ -1,8 +1,8 @@
 #include <utility>
 #include <memory>
 
-#include "computer_builder.h"
-#include "gaming_computer_builder.h"
+#include "../inc/computer_builder.h"
+#include "../inc/gaming_computer_builder.h"
 
 GamingComputerBuilder::GamingComputerBuilder(){
 	computer = std::make_shared<Computer>();
