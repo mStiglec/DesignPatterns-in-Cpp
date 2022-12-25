@@ -1,0 +1,33 @@
+Iterator pattern
+
+----DESCRIPTION----
+Iterator pattern is used for easier traversal through collection(s). Collection is data
+container. Their structure can differ (tree, array, graph, map...). There needs to be way
+to go through all elements in those structures. There can be more than one way to go through
+all elements. Iterator pattern will provide these traverse algorithms in separate classes so
+they are not inside main structure class.
+
+----PROBLEM(S)----
+Traversal through collection(s) data.
+There can be more than one way to go through collection.
+All algorithm traverse code is inside main class for structure implementation (not good). 
+
+----SOLUTION----
+Every way of traverse through certain collection will have own class that will represent that algorithm.
+This algorithm classes can be fetched from collection class.
+All iterators inherit base iterator class.
+All iterators are able to track traversal progress on their own (that way multiple iterators can traverse
+through colection in the same time).
+
+----IMPLEMENTED EXAMPLE----
+Example implements binary tree structure with N nodes.
+There are multiple ways to traverse tree structure.
+We will implement preorder and inorder tree traverse.
+
+----WHEN TO USE ITERATOR PATTERN----
+You have collection for some type of data and you need to have different ways of travrsing through that
+collection. You need to traverse through that collection in the same time. You dont want client to know
+how your structure is implemented.
+
+----REFERENCE----
+https://refactoring.guru/design-patterns/iterator
