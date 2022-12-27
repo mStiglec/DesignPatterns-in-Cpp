@@ -1,9 +1,9 @@
 #include <iostream>
 #include <memory>
 
-#include "../inc/directory_component.h"
-#include "../inc/folder.h"
-#include "../inc/file.h"
+#include "inc/directory_component.h"
+#include "inc/folder.h"
+#include "inc/file.h"
 
 int main(){
 	//Create directory structure

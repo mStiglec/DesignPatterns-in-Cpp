@@ -1,9 +1,9 @@
 #include <iostream>
 
-#include "../inc/xml_book_data.h"
-#include "../inc/json_book_data.h"
-#include "../inc/online_book_catalog.h"
-#include "../inc/json_book_data_adapter.h"
+#include "inc/xml_book_data.h"
+#include "inc/json_book_data.h"
+#include "inc/online_book_catalog.h"
+#include "inc/json_book_data_adapter.h"
 
 void printBook(const std::shared_ptr<Book> book){
     std::cout << *book << std::endl;

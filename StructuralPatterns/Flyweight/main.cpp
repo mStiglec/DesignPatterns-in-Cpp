@@ -1,7 +1,7 @@
 #include <iostream>
 #include <memory>
 
-#include "../inc/player.h"
+#include "inc/player.h"
 
 int main(){
 	std::shared_ptr<Player> player = std::make_shared<Player>();

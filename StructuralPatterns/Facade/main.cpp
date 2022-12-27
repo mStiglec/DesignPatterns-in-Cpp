@@ -1,4 +1,4 @@
-#include "../inc/facade.h"
+#include "inc/facade.h"
 
 int main(){
 	//all complex protocol and network functions are moved into facade method

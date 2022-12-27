@@ -1,27 +1,15 @@
 CXX := g++
-CXXFLAGS := -c -Wall -Wextra
+CXXFLAGS := -Wall -Wextra
 
-OBJ_DIR := obj
-SRC_DIR := src
-BIN_DIR := bin
+SUBDIRS := src
 
-SRC := $(wildcard $(SRC_DIR)/*.cpp)
-OBJ := $(SRC:$(SRC_DIR)/%.cpp=$(OBJ_DIR)/%.o)
+.PHONY: clean subsystem main
 
-EXE := $(BIN_DIR)/main
+main.exe: main.cpp subsystems
+	$(CXX) $(CXXFLAGS) $< $(wildcard $(addsuffix /obj/*.o,$(SUBDIRS))) -o $@
 
-.PHONY: all
-
-all: $(EXE)
-
-$(EXE) : $(OBJ) | $(BIN_DIR)
-	$(CXX) $^ -o $@
-
-$(OBJ_DIR)/%.o: $(SRC_DIR)/%.cpp | $(OBJ_DIR)
-	$(CXX) $(CXXFLAGS) -c $< -o $@
-
-$(OBJ_DIR) $(BIN_DIR):
-	@mkdir -p $@
+subsystems:
+	$(MAKE) -C $(SUBDIRS)
 
 clean:
-	rm -rf *.o *.exe core $(BIN_DIR) $(OBJ_DIR)
+	rm *.exe && cd $(SUBDIRS) && make clean

@@ -1,9 +1,9 @@
 #include <iostream>
 #include <memory>
 
-#include "../inc/user_cloud_gui.h"
-#include "../inc/my_cloud_service.h"
-#include "../inc/my_cloud_service_proxy.h"
+#include "inc/user_cloud_gui.h"
+#include "inc/my_cloud_service.h"
+#include "inc/my_cloud_service_proxy.h"
 
 int main(){
 	std::shared_ptr<CloudService> cloudService = std::make_shared<MyCloudService>();
