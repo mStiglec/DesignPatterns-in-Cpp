@@ -1,0 +1,38 @@
+----DESCRIPTION----
+State is behavioral pattern that enables objects to change its behavior at runtime.
+
+----PROBLEM(S)----
+If object has a lot of possible states it can be in (what means that behaviour is 
+different for each state) there is need to handle every possible state based on
+state changes. Handling object behaviour in each state can be done with a lot of
+conditional statements (if's or switch/case). This design will get messy as project
+grows because with each state addition/removal/change a lot of code needs to be
+changed. Also it is hard to predict all states at the design phase of a project,
+so it is good to have code that will be scalable as new states arrive in project
+development.
+
+----SOLUTION----
+New class is created for each possible object state (they inherit same interface).
+Original object class (called context) has a reference to one of the possible
+state classes that represents its current state.
+All work that original object needs to do in that specific state is delegated to
+specific state class.
+When object change state it also changes reference to state class (all state classes
+are aware of other state classes).
+
+----IMPLEMENTED EXAMPLE----
+A lot of web and mobile applications and web pages can be used for free but it
+requires user to create his account. Also there is a lot of functionality that is
+enabled only to "PRO" users which demands monthly payments.
+Three states in which web/mobile app can be are:
+	1. User does not have account
+	2. User has account
+	3. User has PRO privileges
+
+
+----WHEN TO USE STATE PATTERN----
+Object has different behaviour based on its different states.
+State changes are deterministic and finite.
+
+----REFERENCE----
+https://refactoring.guru/design-patterns/state
