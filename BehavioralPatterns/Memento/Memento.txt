@@ -1,0 +1,37 @@
+----DESCRIPTION----
+Memento is behavioral pattern that enables storing previous states of object
+without breaking encapsulation and memory restrictions
+
+----PROBLEM(S)----
+When application has need to store its current state it implies that fields,
+variables or collections from various objects need to be stored. To store object
+that object needs to be red. That implies having access to that object attributes.
+If they are private it means encapuslation needs to be broken.
+Another problem is storing snapshots. If snapshots are stored inside some data
+class without much functionality then all other parts of application need
+acces to that class attributes, so again, encapsulation is broken because all
+attributes of mentioned data class need to be public.
+
+----SOLUTION----
+Memento pattern suggest creating two clasess: originator and memento.
+Originator class objects are objects that want their state to be saved.
+Memento class will be used to store references to originator states. Memento
+provide access to state only to originator from which state is taken (every
+originator can access only his stored states). Other objects communicate
+through specific interface defined on memento class (originator state should not
+be accessed through that interface).
+Last class this pattern introduce (this is optional) is caretaker class which is
+class that use (store) mementos. This class can access certain memento data through
+limited interface and it can not see states stored in memento.
+
+----IMPLEMENTED EXAMPLE----
+Game class will act as originator which state is going to be saved.
+Snapshot will act as memento class and will be used to store game states.
+Memory card will be caretaker which will have container with snapshots.
+
+----WHEN TO USE MEMENTO PATTERN----
+When there is need for storing object states without breaking object encapsulation.
+
+
+----REFERENCE----
+https://refactoring.guru/design-patterns/memento
