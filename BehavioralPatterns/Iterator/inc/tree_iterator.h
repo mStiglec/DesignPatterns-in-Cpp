@@ -6,9 +6,9 @@
 #include "node.h"
 
 class TreeIterator {
-	public:
-		virtual std::shared_ptr<Node> getNext() = 0;
-		virtual bool isStackEmpty() = 0;
+ public:
+  virtual std::shared_ptr<Node> getNext() = 0;
+  virtual bool isStackEmpty() = 0;
 };
 
-#endif // TREE_ITERATOR_H
+#endif  // TREE_ITERATOR_H

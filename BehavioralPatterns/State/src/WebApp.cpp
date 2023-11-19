@@ -1,34 +1,42 @@
 #include "../inc/WebApp.h"
 
-WebApp::WebApp(State* state) {
+WebApp::WebApp(std::shared_ptr<State> state)
+{
   changeState(state);
 }
 
-void WebApp::changeState(State* state) {
-  state = state;
-  state->setWebApp(this);
+void WebApp::changeState(std::shared_ptr<State> state)
+{
+  this->state = state;
+  this->state->setWebApp(this);
 }
 
-void WebApp::logIn() {
+void WebApp::logIn()
+{
   state->logIn();
 }
 
-void WebApp::logOut() {
+void WebApp::logOut()
+{
   state->logOut();
 }
 
-void WebApp::subscribeForProVersion() {
+void WebApp::subscribeForProVersion()
+{
   state->subscribeForProVersion();
 }
 
-void WebApp::unsubscribeFromProVersion() {
+void WebApp::unsubscribeFromProVersion()
+{
   state->unsubscribeFromProVersion();
 }
 
-void WebApp::checkProducts() {
+void WebApp::checkProducts()
+{
   state->checkProducts();
 }
 
-void WebApp::orderProducts() {
+void WebApp::orderProducts()
+{
   state->orderProducts();
 }

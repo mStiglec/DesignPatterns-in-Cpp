@@ -1,23 +1,26 @@
 #ifndef WEB_APP_H
 #define WEB_APP_H
 
+#include <memory>
+
 #include "State.h"
 
+// CONTEXT
 class WebApp {
-  private:
-  	State* state;
+ private:
+  std::shared_ptr<State> state;
 
-  public:
-    WebApp(State* state);
+ public:
+  WebApp(std::shared_ptr<State> state);
 
-    void changeState(State* state);
+  void changeState(std::shared_ptr<State> state);
 
-    void checkProducts();
-    void orderProducts();
-    void logIn();
-    void logOut();
-    void subscribeForProVersion();
-    void unsubscribeFromProVersion();
+  void checkProducts();
+  void orderProducts();
+  void logIn();
+  void logOut();
+  void subscribeForProVersion();
+  void unsubscribeFromProVersion();
 };
 
-#endif // WEB_APP_H
+#endif  // WEB_APP_H

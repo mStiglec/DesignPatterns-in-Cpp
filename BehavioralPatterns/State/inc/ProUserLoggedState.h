@@ -4,15 +4,15 @@
 #include "State.h"
 
 class ProUserLoggedState : public State {
-  public:
-    ProUserLoggedState();
-    
-    void checkProducts() override;
-    void orderProducts() override;
-    void logIn() override;
-    void subscribeForProVersion() override;
-    void unsubscribeFromProVersion() override;
-    void logOut() override;
+ public:
+  ProUserLoggedState();
+
+  void checkProducts() override;
+  void orderProducts() override;
+  void logIn() override;
+  void subscribeForProVersion() override;
+  void unsubscribeFromProVersion() override;
+  void logOut() override;
 };
 
-#endif // PRO_USER_LOGGED_STATE_H
+#endif  // PRO_USER_LOGGED_STATE_H

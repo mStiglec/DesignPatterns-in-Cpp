@@ -9,15 +9,14 @@
 // Binary search need vector to be sorted before searching
 // This class uses sort algorithm to sort vector before search
 
-class BinarySearch{
-	private:
-		std::shared_ptr<SortAlgorithm> sortAlg;
+class BinarySearch {
+ private:
+  std::shared_ptr<SortAlgorithm> sortAlg;
 
-	public:
-		BinarySearch(std::shared_ptr<SortAlgorithm> sortAlg);
-		void setSortAlgorithm(std::shared_ptr<SortAlgorithm> sortAlg);
-		bool search(std::vector<int>& vec, int num);
+ public:
+  BinarySearch(std::shared_ptr<SortAlgorithm> sortAlg);
+  void setSortAlgorithm(std::shared_ptr<SortAlgorithm> sortAlg);
+  bool search(std::vector<int>& vec, int num);
 };
 
-
-#endif // BINARY_SEARCH_H
+#endif  // BINARY_SEARCH_H

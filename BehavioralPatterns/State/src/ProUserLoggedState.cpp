@@ -1,32 +1,41 @@
+#include "../inc/ProUserLoggedState.h"
+
 #include <iostream>
 
-#include "../inc/ProUserLoggedState.h"
-#include "../inc/UserLoggedState.h"
 #include "../inc/InitialState.h"
+#include "../inc/UserLoggedState.h"
 #include "../inc/WebApp.h"
 
 ProUserLoggedState::ProUserLoggedState(){};
 
-void ProUserLoggedState::checkProducts() {
+void ProUserLoggedState::checkProducts()
+{
   std::cout << "Products are listed below" << std::endl;
 }
 
-void ProUserLoggedState::orderProducts() {
+void ProUserLoggedState::orderProducts()
+{
   std::cout << "Order completed successfully" << std::endl;
 }
 
-void ProUserLoggedState::logIn() {
+void ProUserLoggedState::logIn()
+{
   std::cout << "You are already logged in" << std::endl;
 }
 
-void ProUserLoggedState::subscribeForProVersion() {
+void ProUserLoggedState::subscribeForProVersion()
+{
   std::cout << "You are already subscribed" << std::endl;
 }
 
-void ProUserLoggedState::unsubscribeFromProVersion() {
-  webApp->changeState(new UserLoggedState());
+void ProUserLoggedState::unsubscribeFromProVersion()
+{
+  std::shared_ptr<State> userLoggedState = std::make_shared<UserLoggedState>();
+  webApp->changeState(userLoggedState);
 }
 
-void ProUserLoggedState::logOut() {
-  webApp->changeState(new InitialState());
+void ProUserLoggedState::logOut()
+{
+  std::shared_ptr<State> initialState = std::make_shared<InitialState>();
+  webApp->changeState(initialState);
 }
