@@ -3,12 +3,12 @@
 
 #include "door.h"
 
-class WoodenDoor : public Door{
-	public:
-		WoodenDoor(double _height, double _width);
+class WoodenDoor : public Door {
+  public:
+    WoodenDoor(double _height, double _width);
 
-		void open() override;
-		void close() override;
+    void open() override;
+    void close() override;
 };
 
 #endif

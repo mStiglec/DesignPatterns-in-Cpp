@@ -3,12 +3,12 @@
 
 #include "door.h"
 
-class NormalDoor : public Door{
-	public:
-		NormalDoor(double height, double width);
+class NormalDoor : public Door {
+  public:
+    NormalDoor(double height, double width);
 
-		void open() override;
-		void close() override;
+    void open() override;
+    void close() override;
 };
 
 #endif

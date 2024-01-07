@@ -3,20 +3,20 @@
 
 #include <string>
 
-#include "meal.h"
+#include "../enum/dressing.h"
 #include "../enum/salad.h"
-#include "../enum/dressing.h" 
+#include "meal.h"
 
-class Chicken : public Meal{
-	private:
-		Salad salad;
-		Dressing dressing;
+class Chicken : public Meal {
+  private:
+    Salad salad;
+    Dressing dressing;
 
-	public:
-		Chicken() = delete;
-		Chicken(Salad _salad, Dressing dressing);
+  public:
+    Chicken() = delete;
+    Chicken(Salad _salad, Dressing dressing);
 
-		void serve() const override;
+    void serve() const override;
 };
 
 #endif

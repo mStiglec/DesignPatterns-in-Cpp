@@ -3,12 +3,12 @@
 
 #include "window.h"
 
-class NormalWindow : public Window{
-	public:
-		NormalWindow(double height, double width);
+class NormalWindow : public Window {
+  public:
+    NormalWindow(double height, double width);
 
-		void open() override;
-		void close() override;
+    void open() override;
+    void close() override;
 };
 
 #endif

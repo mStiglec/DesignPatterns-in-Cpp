@@ -3,12 +3,12 @@
 
 #include "window.h"
 
-class SnowWindow : public Window{
-	public:
-		SnowWindow(double height, double width);
+class SnowWindow : public Window {
+  public:
+    SnowWindow(double height, double width);
 
-		void open() override;
-		void close() override;
+    void open() override;
+    void close() override;
 };
 
 #endif

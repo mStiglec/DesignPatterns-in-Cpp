@@ -1,25 +1,29 @@
+#include "random.h"
+
 #include <iostream>
 #include <random>
-#include "random.h"
 
 Random* Random::random = nullptr;
 
-Random* Random::getInstance(){
-	if(random == nullptr){
-		random = new Random();
-	}
-	return random;
+Random* Random::getInstance()
+{
+  if (random == nullptr)
+  {
+    random = new Random();
+  }
+  return random;
 }
 
-void Random::changeRandomNumber(){
+void Random::changeRandomNumber()
+{
+  std::random_device rd;
+  std::mt19937 gen(rd());
+  std::uniform_int_distribution<> distr(25, 63);
 
-    std::random_device rd;
-    std::mt19937 gen(rd());
-    std::uniform_int_distribution<> distr(25, 63);
-
-    randomNumber = distr(gen);
+  randomNumber = distr(gen);
 }
 
-double Random::getRandomNumber() const{
-	return randomNumber;
+double Random::getRandomNumber() const
+{
+  return randomNumber;
 }

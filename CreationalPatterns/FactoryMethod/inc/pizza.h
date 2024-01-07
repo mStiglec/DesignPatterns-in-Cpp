@@ -3,18 +3,19 @@
 
 #include <string>
 
-#include "meal.h"
 #include "../enum/size.h"
+#include "meal.h"
 
-class Pizza : public Meal{
-	private:
-		std::string type;
-		Size size;
-	public:
-		Pizza() = delete;
-		Pizza(std::string _type, Size _size);
+class Pizza : public Meal {
+  private:
+    std::string type;
+    Size size;
 
-		void serve() const override;
+  public:
+    Pizza() = delete;
+    Pizza(std::string _type, Size _size);
+
+    void serve() const override;
 };
 
 #endif

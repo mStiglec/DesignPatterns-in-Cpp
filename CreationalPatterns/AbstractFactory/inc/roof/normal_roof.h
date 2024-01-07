@@ -3,11 +3,11 @@
 
 #include "roof.h"
 
-class NormalRoof: public Roof{
-	public:
-		NormalRoof(double height);
-		
-		void protectFromRain() override;
+class NormalRoof : public Roof {
+  public:
+    NormalRoof(double height);
+
+    void protectFromRain() override;
 };
 
 #endif

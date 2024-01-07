@@ -3,12 +3,12 @@
 
 #include "window.h"
 
-class WoodenWindow : public Window{
-	public:
-		WoodenWindow(double height, double width);
+class WoodenWindow : public Window {
+  public:
+    WoodenWindow(double height, double width);
 
-		void open() override;
-		void close() override;
+    void open() override;
+    void close() override;
 };
 
 #endif

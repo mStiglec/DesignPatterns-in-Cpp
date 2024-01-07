@@ -3,14 +3,15 @@
 
 #include <string>
 
-#include "../../enum/size.h"
-#include "../../enum/salad.h"
 #include "../../enum/dressing.h"
+#include "../../enum/salad.h"
+#include "../../enum/size.h"
 
-namespace utils {
-	std::string getDressing(enum Dressing dressing);
-	std::string getSalad(enum Salad salad);
-	std::string getSize(enum Size size);
-} // utils
+namespace utils
+{
+std::string getDressing(enum Dressing dressing);
+std::string getSalad(enum Salad salad);
+std::string getSize(enum Size size);
+}  // namespace utils
 
 #endif
