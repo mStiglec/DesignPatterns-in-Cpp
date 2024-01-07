@@ -6,14 +6,15 @@
 #include "json_book_data.h"
 #include "xml_book_data.h"
 
-class JsonBookDataAdapter : public JsonBookData{
-	private:
-		XmlBookData xmlBookData;
-	public:
-		JsonBookDataAdapter() = delete;
-		JsonBookDataAdapter(XmlBookData xmlBookData);
+class JsonBookDataAdapter : public JsonBookData {
+  private:
+    XmlBookData xmlBookData;
 
-		std::string getData() const override;
+  public:
+    JsonBookDataAdapter() = delete;
+    JsonBookDataAdapter(XmlBookData xmlBookData);
+
+    std::string getData() const override;
 };
 
 #endif

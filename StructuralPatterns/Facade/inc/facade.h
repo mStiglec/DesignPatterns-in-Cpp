@@ -3,11 +3,10 @@
 
 #include <string>
 
-class Facade{
-	public:
-		Facade() = default;
-		void sendMessageOverNetwork(std::string message);
+class Facade {
+  public:
+    Facade() = default;
+    void sendMessageOverNetwork(std::string message);
 };
 
-
-#endif // FACADE_H
+#endif  // FACADE_H

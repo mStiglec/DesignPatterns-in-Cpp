@@ -3,14 +3,15 @@
 
 #include <string>
 
-class XmlBookData{
-	private:
-		std::string bookData;
-	public:
-		XmlBookData() = default;
-		XmlBookData(const std::string fileName);
+class XmlBookData {
+  private:
+    std::string bookData;
 
-		virtual std::string getData() const;
+  public:
+    XmlBookData() = default;
+    XmlBookData(const std::string fileName);
+
+    virtual std::string getData() const;
 };
 
 #endif

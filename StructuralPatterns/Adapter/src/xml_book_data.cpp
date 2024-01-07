@@ -1,22 +1,24 @@
-#include <iostream>
-#include <sstream>
-#include <fstream>
-
 #include "../inc/xml_book_data.h"
 
-XmlBookData::XmlBookData(const std::string fileName){
-	std::ifstream inf;
-    std::ostringstream oss;
+#include <fstream>
+#include <iostream>
+#include <sstream>
 
-	inf.open(fileName, std::ifstream::in);
-    oss << inf.rdbuf();
-    bookData = oss.str();
-    inf.close();
+XmlBookData::XmlBookData(const std::string fileName)
+{
+  std::ifstream inf;
+  std::ostringstream oss;
 
-    oss.str("");
-    oss.clear();
+  inf.open(fileName, std::ifstream::in);
+  oss << inf.rdbuf();
+  bookData = oss.str();
+  inf.close();
+
+  oss.str("");
+  oss.clear();
 }
 
-std::string XmlBookData::getData() const{
-	return bookData;
+std::string XmlBookData::getData() const
+{
+  return bookData;
 }

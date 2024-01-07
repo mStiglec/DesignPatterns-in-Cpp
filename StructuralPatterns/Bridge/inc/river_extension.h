@@ -3,16 +3,16 @@
 
 #include "extension.h"
 
-class RiverExtension : public Extension{
-	private:
-		unsigned int numOfPlayers;
-	
-	public:
-		RiverExtension(unsigned int numOfPlayers);
+class RiverExtension : public Extension {
+  private:
+    unsigned int numOfPlayers;
 
-		void attachExtension() override;
-		void dettachExtension() override;
-		void play() override;
+  public:
+    RiverExtension(unsigned int numOfPlayers);
+
+    void attachExtension() override;
+    void dettachExtension() override;
+    void play() override;
 };
 
 #endif

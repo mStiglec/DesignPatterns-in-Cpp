@@ -3,16 +3,16 @@
 
 #include "extension.h"
 
-class ForestExtension : public Extension{
-	private:
-		unsigned int numOfPlayers;
-	
-	public:
-		ForestExtension(unsigned int numOfPlayers);
+class ForestExtension : public Extension {
+  private:
+    unsigned int numOfPlayers;
 
-		void attachExtension() override;
-		void dettachExtension() override;
-		void play() override;
+  public:
+    ForestExtension(unsigned int numOfPlayers);
+
+    void attachExtension() override;
+    void dettachExtension() override;
+    void play() override;
 };
 
 #endif

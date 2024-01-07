@@ -3,14 +3,15 @@
 
 #include <string>
 
-class JsonBookData{
-	private:
-		std::string bookData;
-	public:
-		JsonBookData() = default;
-		JsonBookData(const std::string fileName);
+class JsonBookData {
+  private:
+    std::string bookData;
 
-		virtual std::string getData() const;
+  public:
+    JsonBookData() = default;
+    JsonBookData(const std::string fileName);
+
+    virtual std::string getData() const;
 };
 
 #endif

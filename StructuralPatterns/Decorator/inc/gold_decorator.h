@@ -5,10 +5,10 @@
 
 #include "weapon_decorator.h"
 
-class GoldDecorator : public WeaponDecorator{
-	public:
-		GoldDecorator(std::shared_ptr<Weapon> weapon);
-		void attack() override;
+class GoldDecorator : public WeaponDecorator {
+  public:
+    GoldDecorator(std::shared_ptr<Weapon> weapon);
+    void attack() override;
 };
 
-#endif // GOLD_DECORATOR_H
+#endif  // GOLD_DECORATOR_H

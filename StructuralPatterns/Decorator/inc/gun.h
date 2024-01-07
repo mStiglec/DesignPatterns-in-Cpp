@@ -3,10 +3,10 @@
 
 #include "weapon.h"
 
-class Gun : public Weapon{
-	public:
-		Gun();
-		void attack() override;
+class Gun : public Weapon {
+  public:
+    Gun();
+    void attack() override;
 };
 
-#endif // GUN_H
+#endif  // GUN_H
