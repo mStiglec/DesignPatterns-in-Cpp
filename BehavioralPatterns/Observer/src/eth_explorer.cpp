@@ -1,6 +1,6 @@
 #include "../inc/eth_explorer.h"
 
-#include "../rapidjson/document.h"
+#include "../../../rapidjson/include/rapidjson/document.h"
 
 ETHExplorer::ETHExplorer(float ethValue, HttpHandler* httpHandler)
 {

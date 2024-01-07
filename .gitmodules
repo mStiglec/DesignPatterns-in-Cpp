@@ -1,0 +1,6 @@
+[submodule "rapidjson"]
+	path = rapidjson
+	url = https://github.com/Tencent/rapidjson.git
+[submodule "xml2json"]
+	path = xml2json
+	url = https://github.com/Cheedoong/xml2json.git

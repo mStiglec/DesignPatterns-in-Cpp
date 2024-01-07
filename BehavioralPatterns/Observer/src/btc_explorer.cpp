@@ -1,6 +1,6 @@
 #include "../inc/btc_explorer.h"
 
-#include "../rapidjson/document.h"
+#include "../../../rapidjson/include/rapidjson/document.h"
 
 BTCExplorer::BTCExplorer(float btcValue, HttpHandler* httpHandler)
 {

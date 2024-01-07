@@ -3,12 +3,12 @@
 #include <string>
 #include <thread>
 
+#include "../../rapidjson/include/rapidjson/document.h"
 #include "inc/btc_explorer.h"
 #include "inc/crypto_explorer.h"
 #include "inc/eth_explorer.h"
 #include "inc/http_handler.h"
 #include "inc/subscriber.h"
-#include "rapidjson/document.h"
 
 float getInitialBtcValue(HttpHandler* httpHandler)
 {
