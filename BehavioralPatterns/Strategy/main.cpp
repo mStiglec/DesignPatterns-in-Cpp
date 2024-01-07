@@ -25,11 +25,9 @@ int main()
   std::cout << std::endl;
 
   std::shared_ptr<SortAlgorithm> sortAlg = std::make_shared<BubbleSort>();
-  std::shared_ptr<BinarySearch> binarySearch =
-      std::make_shared<BinarySearch>(sortAlg);
+  std::shared_ptr<BinarySearch> binarySearch = std::make_shared<BinarySearch>(sortAlg);
 
-  std::cout << "Number is found: " << binarySearch->search(vec, 17)
-            << std::endl;
+  std::cout << "Number is found: " << binarySearch->search(vec, 17) << std::endl;
 
   vec.clear();
   for (int i = 0; i < 10; i++)
@@ -42,6 +40,5 @@ int main()
   sortAlg = std::make_shared<SelectionSort>();
   binarySearch->setSortAlgorithm(sortAlg);
 
-  std::cout << "Number is found: " << binarySearch->search(vec, 17)
-            << std::endl;
+  std::cout << "Number is found: " << binarySearch->search(vec, 17) << std::endl;
 }

@@ -15,8 +15,7 @@ void UserLoggedState::checkProducts()
 
 void UserLoggedState::orderProducts()
 {
-  std::cout << "You can not order products because you are not PRO user"
-            << std::endl;
+  std::cout << "You can not order products because you are not PRO user" << std::endl;
 }
 
 void UserLoggedState::logIn()
@@ -26,8 +25,7 @@ void UserLoggedState::logIn()
 
 void UserLoggedState::subscribeForProVersion()
 {
-  std::shared_ptr<State> proUserLoggedState =
-      std::make_shared<ProUserLoggedState>();
+  std::shared_ptr<State> proUserLoggedState = std::make_shared<ProUserLoggedState>();
   webApp->changeState(proUserLoggedState);
 }
 

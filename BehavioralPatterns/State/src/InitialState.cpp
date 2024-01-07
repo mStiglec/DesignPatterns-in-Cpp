@@ -9,14 +9,12 @@ InitialState::InitialState(){};
 
 void InitialState::checkProducts()
 {
-  std::cout << "You can not see products because you do not have account"
-            << std::endl;
+  std::cout << "You can not see products because you do not have account" << std::endl;
 }
 
 void InitialState::orderProducts()
 {
-  std::cout << "You can not order products because you are not PRO user"
-            << std::endl;
+  std::cout << "You can not order products because you are not PRO user" << std::endl;
 }
 
 void InitialState::logIn()
@@ -27,8 +25,7 @@ void InitialState::logIn()
 
 void InitialState::subscribeForProVersion()
 {
-  std::cout << "You need account before subscribing to PRO version"
-            << std::endl;
+  std::cout << "You need account before subscribing to PRO version" << std::endl;
 }
 
 void InitialState::unsubscribeFromProVersion()

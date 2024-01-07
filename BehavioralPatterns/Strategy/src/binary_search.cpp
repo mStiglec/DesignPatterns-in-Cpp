@@ -2,9 +2,7 @@
 
 #include <iostream>
 
-BinarySearch::BinarySearch(std::shared_ptr<SortAlgorithm> _sortAlg)
-    : sortAlg(_sortAlg)
-{}
+BinarySearch::BinarySearch(std::shared_ptr<SortAlgorithm> _sortAlg) : sortAlg(_sortAlg) {}
 
 void BinarySearch::setSortAlgorithm(std::shared_ptr<SortAlgorithm> sortAlg)
 {

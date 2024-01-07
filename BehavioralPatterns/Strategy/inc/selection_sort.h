@@ -6,13 +6,13 @@
 #include "sort_algorithm.h"
 
 class SelectionSort : public SortAlgorithm {
- private:
-  void swap(int& a, int& b);
+  private:
+    void swap(int& a, int& b);
 
- public:
-  SelectionSort() = default;
+  public:
+    SelectionSort() = default;
 
-  virtual std::vector<int>& sort(std::vector<int>& vec) override;
+    virtual std::vector<int>& sort(std::vector<int>& vec) override;
 };
 
 #endif  // SELECTION_SORT_H

@@ -5,22 +5,22 @@
 #include "inc/tree_iterator.h"
 
 class Student {
- private:
-  std::string name;
+  private:
+    std::string name;
 
- public:
-  Student()
-  {
-    this->name = "student";
-  }
-  void implementTraverseForTreeStructure(std::shared_ptr<TreeIterator> iterator)
-  {
-    while (!iterator->isStackEmpty())
+  public:
+    Student()
     {
-      std::shared_ptr<Node> node = iterator->getNext();
-      std::cout << node->data << " ";
+      this->name = "student";
     }
-  }
+    void implementTraverseForTreeStructure(std::shared_ptr<TreeIterator> iterator)
+    {
+      while (!iterator->isStackEmpty())
+      {
+        std::shared_ptr<Node> node = iterator->getNext();
+        std::cout << node->data << " ";
+      }
+    }
 };
 
 int main()

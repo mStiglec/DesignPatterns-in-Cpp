@@ -17,14 +17,11 @@ int main(void)
   Image firstImage = Image(1, "FirstImage");
   Image secondImage = Image(2, "SecondImage");
 
-  std::shared_ptr<Command> saveCommand =
-      std::make_shared<CommandSave>(server, firstImage);
+  std::shared_ptr<Command> saveCommand = std::make_shared<CommandSave>(server, firstImage);
 
-  std::shared_ptr<Command> fetchImagesCommand =
-      std::make_shared<CommandFetchImages>(server);
+  std::shared_ptr<Command> fetchImagesCommand = std::make_shared<CommandFetchImages>(server);
 
-  std::shared_ptr<Command> numOfImagesCommand =
-      std::make_shared<CommandNumOfImages>(server);
+  std::shared_ptr<Command> numOfImagesCommand = std::make_shared<CommandNumOfImages>(server);
 
   application->executeAction(saveCommand);
 

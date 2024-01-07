@@ -6,23 +6,23 @@
 #include "Command.h"
 
 class CommandSave : public Command {
- private:
-  std::shared_ptr<Server> server;
-  Image image;
+  private:
+    std::shared_ptr<Server> server;
+    Image image;
 
- public:
-  CommandSave(std::shared_ptr<Server> server, Image image)
-  {
-    this->server = server;
-    this->image = image;
-  }
+  public:
+    CommandSave(std::shared_ptr<Server> server, Image image)
+    {
+      this->server = server;
+      this->image = image;
+    }
 
-  void execute() override
-  {
-    server->saveImage(image);
-  }
+    void execute() override
+    {
+      server->saveImage(image);
+    }
 
-  void response() override {}
+    void response() override {}
 };
 
 #endif  // COMMAND_SAVE_H

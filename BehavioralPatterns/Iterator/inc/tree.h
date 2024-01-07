@@ -9,15 +9,15 @@
 // from nodes), this is just for example as this Tree class represent
 // collection that we want to traverse
 class Tree : public IterableCollection {
- private:
-  std::shared_ptr<Node> root;
+  private:
+    std::shared_ptr<Node> root;
 
-  Tree(std::vector<int> treeData);
-  std::shared_ptr<Node> buildTree(std::vector<int> treeData, int position);
+    Tree(std::vector<int> treeData);
+    std::shared_ptr<Node> buildTree(std::vector<int> treeData, int position);
 
- public:
-  static std::shared_ptr<Tree> createTree(std::vector<int> treeData);
-  std::shared_ptr<TreeIterator> getPreorderIterator() override;
-  std::shared_ptr<TreeIterator> getInorderIterator() override;
-  std::shared_ptr<Node> getRoot() const;
+  public:
+    static std::shared_ptr<Tree> createTree(std::vector<int> treeData);
+    std::shared_ptr<TreeIterator> getPreorderIterator() override;
+    std::shared_ptr<TreeIterator> getInorderIterator() override;
+    std::shared_ptr<Node> getRoot() const;
 };

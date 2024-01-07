@@ -4,10 +4,7 @@
 
 PlayerStats::PlayerStats(){};
 
-PlayerStats::PlayerStats(std::string name,
-                         int health,
-                         unsigned int armor,
-                         unsigned int attack)
+PlayerStats::PlayerStats(std::string name, int health, unsigned int armor, unsigned int attack)
 {
   this->name = name;
   this->health = health;

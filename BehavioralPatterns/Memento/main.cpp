@@ -13,11 +13,8 @@ int main()
   unsigned int playerStartingAttack = 5;
   std::string playerName = "Link";
 
-  std::shared_ptr<PlayerStats> playerStats =
-      std::make_shared<PlayerStats>(playerName,
-                                    playerStartingHealth,
-                                    playerStartingArmor,
-                                    playerStartingAttack);
+  std::shared_ptr<PlayerStats> playerStats = std::make_shared<PlayerStats>(
+      playerName, playerStartingHealth, playerStartingArmor, playerStartingAttack);
 
   std::shared_ptr<Game> game = std::make_shared<Game>("Zelda", playerStats);
 

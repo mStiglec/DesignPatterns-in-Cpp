@@ -42,8 +42,7 @@ void MemoryCard::listSavePoints()
 {
   for (std::shared_ptr<Game::GameSavePoint> gameSavePoint : gameSavePoints)
   {
-    std::cout << gameSavePoint->getSavePointName() << " : "
-              << gameSavePoint->getSavePointTime();
+    std::cout << gameSavePoint->getSavePointName() << " : " << gameSavePoint->getSavePointTime();
   }
   std::cout << std::endl;
 }

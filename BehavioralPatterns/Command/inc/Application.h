@@ -5,11 +5,11 @@
 
 // INVOKER CLASS
 class Application {
- public:
-  void executeAction(std::shared_ptr<Command> command)
-  {
-    command->execute();
-  }
+  public:
+    void executeAction(std::shared_ptr<Command> command)
+    {
+      command->execute();
+    }
 };
 
 #endif  // APPLICATION_H
