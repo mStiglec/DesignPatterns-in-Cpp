@@ -11,6 +11,8 @@ class ArrayHandler {
     // Template method
     void handleArray();
 
+    virtual ~ArrayHandler(){};
+
     // Method which will be overriden by different clients
     virtual void sort() = 0;
 

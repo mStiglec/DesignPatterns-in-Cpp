@@ -12,6 +12,8 @@ class CryptoExplorer {
     std::vector<Subscriber> subscribers;
 
   public:
+    virtual ~CryptoExplorer(){};
+
     virtual void addSubscriber(Subscriber& subscriber) = 0;
     virtual void removeSubscriber(Subscriber& subscriber) = 0;
     virtual void notify() = 0;

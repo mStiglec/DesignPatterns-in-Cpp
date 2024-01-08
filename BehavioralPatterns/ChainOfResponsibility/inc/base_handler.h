@@ -14,6 +14,8 @@ class BaseHandler {
       this->nextHandler = handler;
     }
 
+    virtual ~BaseHandler(){};
+
     virtual void process(User* user, UserDatabase* db) = 0;
 };
 

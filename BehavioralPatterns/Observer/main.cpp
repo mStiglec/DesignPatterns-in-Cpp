@@ -1,5 +1,6 @@
 #include <chrono>
 #include <iostream>
+#include <signal.h>
 #include <string>
 #include <thread>
 
@@ -10,6 +11,8 @@
 #include "inc/http_handler.h"
 #include "inc/subscriber.h"
 
+static unsigned int sigint_flag = 1;
+
 float getInitialBtcValue(HttpHandler* httpHandler)
 {
   std::string json = httpHandler->sendGetRequest("https://blockchain.info/ticker");
@@ -18,6 +21,11 @@ float getInitialBtcValue(HttpHandler* httpHandler)
   document.Parse<0>(json.c_str());
 
   return document["USD"]["last"].GetFloat();
+}
+
+void sigint_handler(int signal)
+{
+  sigint_flag = 0;
 }
 
 // EthExplorer is not used because this API returns values only for BTC
@@ -38,11 +46,24 @@ int main(void)
   btcCryptoExplorer->addSubscriber(secondSubscriber);
   btcCryptoExplorer->addSubscriber(thirdSubscriber);
 
-  std::chrono::seconds duration(60);
-  while (true)
+  struct sigaction sigIntHandler;
+
+  sigIntHandler.sa_handler = sigint_handler;
+  sigemptyset(&sigIntHandler.sa_mask);
+  sigIntHandler.sa_flags = 0;
+
+  sigaction(SIGINT, &sigIntHandler, NULL);
+
+  int sleepDurationInSec = 5;
+  std::chrono::seconds duration(sleepDurationInSec);
+  while (sigint_flag)
   {
-    std::cout << "Waiting for a minute" << std::endl;
+    std::cout << "Waiting ..." << std::endl;
     std::this_thread::sleep_for(duration);
     btcCryptoExplorer->updateCryptoValue();
+    std::cout << std::endl;
   }
+
+  delete httpHandler;
+  delete btcCryptoExplorer;
 }

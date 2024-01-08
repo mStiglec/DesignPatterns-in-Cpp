@@ -25,4 +25,12 @@ int main(void)
   chartHandler->setNextHandler(creditCardHandler);
 
   loginHandler->process(firstUser, db);
+
+  delete firstUser;
+  delete secondUser;
+  delete thirdUser;
+  delete db;
+  delete loginHandler;
+  delete chartHandler;
+  delete creditCardHandler;
 }

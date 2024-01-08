@@ -7,6 +7,8 @@
 
 class Visitor {
   public:
+    virtual ~Visitor(){};
+
     virtual float visit(Triangle* triangle) = 0;
     virtual float visit(Square* square) = 0;
     virtual float visit(Circle* circle) = 0;

@@ -23,6 +23,11 @@ int main(void)
   std::cout << circle->accept(surfaceVisitor) << std::endl;
   std::cout << triangle->accept(surfaceVisitor) << std::endl;
   std::cout << square->accept(surfaceVisitor) << std::endl;
+
+  delete circle;
+  delete triangle;
+  delete square;
+  delete surfaceVisitor;
 }
 
 // ------  EXAMPLE USING C++17 STD::VISIT ------

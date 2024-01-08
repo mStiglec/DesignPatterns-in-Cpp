@@ -1,5 +1,5 @@
 CXX := g++
-CXXFLAGS := -g -Wall -Wextra
+CXXFLAGS := -g -Wall
 DLFLAGS := -lcurl
 SUBDIRS := src
 

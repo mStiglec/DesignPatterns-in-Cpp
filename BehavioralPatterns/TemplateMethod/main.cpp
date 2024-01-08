@@ -29,4 +29,11 @@ int main(void)
   {
     handler->handleArray();
   }
+
+  for (auto array_handler : arrayHandlers)
+  {
+    delete array_handler;
+  }
+
+  arrayHandlers.clear();
 }

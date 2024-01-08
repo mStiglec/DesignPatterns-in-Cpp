@@ -19,4 +19,9 @@ int main(void)
   firstUser->sendMessage(secondUser, "Sending message to second User");
   thirdUser->sendMessage(firstUser, "Sending message to second User");
   secondUser->sendMessage(thirdUser, "Sending message to second User");
+
+  delete firstUser;
+  delete secondUser;
+  delete thirdUser;
+  delete mediator;
 }
